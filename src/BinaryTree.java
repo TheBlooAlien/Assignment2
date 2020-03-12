@@ -3,9 +3,8 @@
 // Hussein Suleman
 
 /**
- * The basis for the Binary Search Tree. It stores nodes in a branching fashion starting at the root node,
- * each node may only have two children. It has no advanced balancing mechanism.
- * @param <dataType> Generic type for the types of data to be stored in the binary tree
+ * The basis for the Binary Search Tree. It stores nodes in a branching fashion starting at the root node.
+ * @param <dataType>
  */
 public class BinaryTree<dataType>
 {
@@ -19,10 +18,6 @@ public class BinaryTree<dataType>
       root = null;
    }
    
-   /**
-    * 
-    * @return Recursive function
-    */
    public int getHeight ()
    {
       return getHeight (root);
@@ -42,10 +37,6 @@ public class BinaryTree<dataType>
          return 1 + Math.max (getHeight (node.getLeft ()), getHeight (node.getRight ()));
    }
    
-   /**
-    * Recursive function
-    * @return recurses the root
-    */
    public int getSize ()
    {
       return getSize (root);
@@ -72,9 +63,6 @@ public class BinaryTree<dataType>
       System.out.println (node.data); //Commented out to make python output more easily manipulatable
    }
    
-   /**
-    * Recursive function, recursing the root
-    */
    public void preOrder ()
    {
       preOrder (root);
