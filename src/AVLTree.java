@@ -10,7 +10,7 @@
  */
 public class AVLTree<dataType extends Comparable<? super dataType>> extends BinaryTree<dataType>
 {
-   public static findCount = 0;
+   public static int findCount = 0;
    public static int insCount = 0;
      /**
      * Method which returns the height of the supplied node

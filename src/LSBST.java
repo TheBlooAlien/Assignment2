@@ -33,7 +33,8 @@ public class LSBST {
                 }
                 catch (FileNotFoundException e){
                     System.out.println("File not found.");
-                }
+                }   
+                insCount = bst.insCount;
             }
     /**
      * This method searches through the data and prints the line matching the given key components.

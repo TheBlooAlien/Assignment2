@@ -8,7 +8,7 @@ import java.io.File;
  * A class which populates an AVL tree with given Load Shedding data.
  * It provides methods to search this data.
  */
-public class LSAVL{
+public class LSAVL extends LSBST{
     String stage, day, startTime, key;
 
     private BinaryTreeNode<DataNode> btNode;
@@ -47,9 +47,9 @@ public class LSAVL{
 
         key = stage+"_"+day+"_"+startTime;
 
-        DataNode searchNode = new DataNode(key+ " [NO AREAS");
+        DataNode searchNode = new DataNode(key+ " [NO AREAS]");
         btNode = avl.find(searchNode);
-        findCount = avl.findCount; //comparisons can be tracked
+        findCount = AVLTree.findCount; //comparisons can be tracked
 
         if (btNode == null){//check if node is empty
             System.out.println("Error: Areas not found.");
@@ -57,6 +57,7 @@ public class LSAVL{
         else{
             System.out.println(btNode.data.toString());
             }
+        findCount = AVLTree.findCount;
     }
 
     public void printAllAreas(){
