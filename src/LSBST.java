@@ -13,6 +13,7 @@ public class LSBST {
     private BinarySearchTree<DataNode> bst = new BinarySearchTree<DataNode>();
     public static int findCount = 0; //Operations to find item within data structure
     public static int insCount = 0; //Operations to insert an item
+    public static int fileLineCount = 0; //counts how many lines there are in the file
 
         public LSBST(){
         }
@@ -25,6 +26,7 @@ public class LSBST {
                 Scanner scFile = new Scanner(new File(fileName));
         
                 while (scFile.hasNext()){
+                    fileLineCount++;
                     bst.insert(new DataNode(scFile.nextLine()));
                     }
                     scFile.close();
@@ -62,7 +64,6 @@ public class LSBST {
      */
     public void printAllAreas(){
         bst.inOrder();
-        System.out.println(BinaryTree.printCount); //Printcount = number of operations taken to print the data in the tree
     }
 
 }

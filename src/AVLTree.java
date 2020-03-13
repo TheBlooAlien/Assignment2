@@ -10,6 +10,8 @@
  */
 public class AVLTree<dataType extends Comparable<? super dataType>> extends BinaryTree<dataType>
 {
+   public static findCount = 0;
+   public static int insCount = 0;
      /**
      * Method which returns the height of the supplied node
      * @param node The node of which the height is being calculated
@@ -83,14 +85,18 @@ public class AVLTree<dataType extends Comparable<? super dataType>> extends Bina
    public BinaryTreeNode<dataType> balance ( BinaryTreeNode<dataType> p )
    {
       fixHeight (p);
+      insCount++;
       if (balanceFactor (p) == 2)
       {
+         insCount++;
          if (balanceFactor (p.right) < 0)
             p.right = rotateRight (p.right);
          return rotateLeft (p);
       }
+      insCount++;
       if (balanceFactor (p) == -2)
       {
+         insCount++;
          if (balanceFactor (p.left) > 0)
             p.left = rotateLeft (p.left);
          return rotateRight (p);
@@ -113,8 +119,10 @@ public class AVLTree<dataType extends Comparable<? super dataType>> extends Bina
     */
    public BinaryTreeNode<dataType> insert ( dataType d, BinaryTreeNode<dataType> node )
    {
+      insCount++;
       if (node == null)
          return new BinaryTreeNode<dataType> (d, null, null);
+      insCount++;
       if (d.compareTo (node.data) <= 0)
          node.left = insert (d, node.left);
       else
@@ -191,6 +199,7 @@ public class AVLTree<dataType extends Comparable<? super dataType>> extends Bina
     */
    public BinaryTreeNode<dataType> find ( dataType d )
    {
+      findCount++;
       if (root == null)
          return null;
       else
@@ -205,9 +214,11 @@ public class AVLTree<dataType extends Comparable<? super dataType>> extends Bina
     */
    public BinaryTreeNode<dataType> find ( dataType d, BinaryTreeNode<dataType> node )
    {
+      findCount++;
       if (d.compareTo (node.data) == 0) 
          return node;
-      else if (d.compareTo (node.data) < 0)
+      findCount++;
+      if (d.compareTo (node.data) < 0)
          return (node.left == null) ? null : find (d, node.left);
       else
          return (node.right == null) ? null : find (d, node.right);
