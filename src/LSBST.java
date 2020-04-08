@@ -34,7 +34,7 @@ public class LSBST {
                 catch (FileNotFoundException e){
                     System.out.println("File not found.");
                 }   
-                insCount = bst.insCount;
+                insCount = BinarySearchTree.insCount;
             }
     /**
      * This method searches through the data and prints the line matching the given key components.
@@ -50,7 +50,7 @@ public class LSBST {
         DataNode searchNode = new DataNode(searchKey+" [NO AREAS]");
 
         btNode = bst.find(searchNode);
-        findCount = bst.findCount; //so extra comparisons can be tracked from public variable in BinarySearchTree
+        findCount = BinarySearchTree.findCount; //so extra comparisons can be tracked from public variable in BinarySearchTree
 
         if (btNode == null){//checking to see if nothing was filled out in the node
             System.out.println("Error: Areas not found.");

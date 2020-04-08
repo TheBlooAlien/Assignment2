@@ -8,8 +8,8 @@
  */
 public class BinarySearchTree<dataType extends Comparable<? super dataType>> extends BinaryTree<dataType>
 {
-   public int findCount = 0;
-   public int insCount = 0;
+   public static int findCount = 0;
+   public static int insCount = 0;
 
    /**
     * Method that inserts a node into a binary search tree and checks if the root is null. If not, it's passed to the other insert
@@ -58,6 +58,7 @@ public class BinarySearchTree<dataType extends Comparable<? super dataType>> ext
     */
    public BinaryTreeNode<dataType> find ( dataType d )
    {
+      findCount++;
       if (root == null)
          return null;
       else

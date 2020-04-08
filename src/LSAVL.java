@@ -12,8 +12,8 @@ public class LSAVL extends LSBST{
     String stage, day, startTime, key;
 
     private BinaryTreeNode<DataNode> btNode;
-    public static int findCount = 0; //Operations to find item within data structure
-    public static int insCount = 0; //Operations to insert an item
+    public static int findCount = 69; //Operations to find item within data structure
+    public static int insCount = 69; //Operations to insert an item
     public static int fileLineCount = 0; //counts how many lines there are in the file
     private AVLTree<DataNode> avl = new AVLTree<DataNode>();
 
@@ -50,14 +50,14 @@ public class LSAVL extends LSBST{
         DataNode searchNode = new DataNode(key+ " [NO AREAS]");
         btNode = avl.find(searchNode);
         findCount = AVLTree.findCount; //comparisons can be tracked
-
+        
         if (btNode == null){//check if node is empty
             System.out.println("Error: Areas not found.");
         }
         else{
             System.out.println(btNode.data.toString());
             }
-        findCount = AVLTree.findCount;
+        
     }
 
     public void printAllAreas(){
