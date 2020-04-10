@@ -32,7 +32,7 @@ public class LSAVLApp{
     }
 
     System.out.println(LSAVL.insCount);
-    System.out.println(LSAVL.findCount);
+    System.out.print(LSAVL.findCount);
 
     }
 }

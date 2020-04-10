@@ -64,6 +64,18 @@ public class DataNode implements Comparable<DataNode>{
         return key;
     }
 
+    public int getArea(){
+        return Integer.parseInt(keyArr[0]);
+    }
+
+    public int getDay(){
+        return Integer.parseInt(keyArr[1]);
+    }
+
+    public int getTime(){
+        return Integer.parseInt(keyArr[3]);
+    }
+
     /**
      * An accessor method which returns the split value of the key.
      * @return The key in component form.
@@ -76,7 +88,7 @@ public class DataNode implements Comparable<DataNode>{
      * @return String: Sensible format of stored data 
      */
     public String toString(){
-        return key +": "+areas;
+        return key + areas;
     }
 
 

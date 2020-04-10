@@ -58,7 +58,6 @@ public class BinarySearchTree<dataType extends Comparable<? super dataType>> ext
     */
    public BinaryTreeNode<dataType> find ( dataType d )
    {
-      findCount++;
       if (root == null)
          return null;
       else

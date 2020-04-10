@@ -32,7 +32,7 @@ public class LSBSTApp {
     }
 
     System.out.println(LSBST.insCount);
-    System.out.println(LSBST.findCount);
+    System.out.print(LSBST.findCount);
 
     }
 }
