@@ -28,7 +28,8 @@ public class LSHash {
 
                 DataNode data = new DataNode(scFile.nextLine()); //data
                 int reference = hash(data); //key
-
+                
+                insCount++;
                 if (hashTable.containsKey(reference)){//checking to see if calculated key is already in the hash table
                     //If the key already exists, we find the associated ArrayList and add the new data to it.
                     ArrayList<DataNode> entries = hashTable.get(reference);
@@ -55,7 +56,7 @@ public class LSHash {
          */
     private int hash(DataNode data){//takes in a key value and creates a hash value for storage
         int sumOfKey = data.getArea() + data.getDay() + data.getTime();
-        return sumOfKey*11%3000;
+        return sumOfKey*3083%3000;
     }
 
     /**
@@ -70,6 +71,7 @@ public class LSHash {
         DataNode searchNode = new DataNode(searchKey+" [NO AREAS]");
         int key = hash(searchNode);
 
+        findCount++;
         if(hashTable.get(key)==null){
             System.out.println("No areas found: Position is empty.");
         }
@@ -79,7 +81,7 @@ public class LSHash {
             boolean found = false; //variable to check if the correct data is found
 
             for (int i = 0; i < arrListSize; i++){ //iterating through each item in the array list to check each datanode with the key given
-                if(entries.get(i).getKey() == searchKey){ //checks to see if the entry at ith position in array list matches the search key
+                if(entries.get(i).getKey().equals(searchKey)){ //checks to see if the entry at ith position in array list matches the search key
                     System.out.println(entries.get(i)); //Prints out the relevant line of the text file according to given key
                     found = true;
                 }
@@ -90,8 +92,26 @@ public class LSHash {
         }
     }
 
+    /**
+     * Method for printing out all the data stored in the hash table, code has been adapted from 
+     * respources from stackoverflow and docs.oracle in compliance to their documentation redistribution policy.
+     */
     public void printAllAreas(){ //Prints out all elements present in the hash table, in order of hash code
-        hashTable.elements();
-    }
+        for (Enumeration<ArrayList<DataNode>> e = hashTable.elements(); e.hasMoreElements();){
+            //adapt code to print out each invividual element in arraylist
+            //for(int i = 0; i < e.nextElement().iterator())
+            //System.out.println(e.nextElement().iterator().next());*/
+        
+            ArrayList<DataNode> elements = e.nextElement();
+            int elementsLength = elements.size();
 
+            for (int i = 0; i < elementsLength; i++){
+                System.out.println(elements.get(i).toString());
+            }
+
+
+        }
+
+    }
 }
+

@@ -73,7 +73,7 @@ public class DataNode implements Comparable<DataNode>{
     }
 
     public int getTime(){
-        return Integer.parseInt(keyArr[3]);
+        return Integer.parseInt(keyArr[2]);
     }
 
     /**
@@ -88,7 +88,7 @@ public class DataNode implements Comparable<DataNode>{
      * @return String: Sensible format of stored data 
      */
     public String toString(){
-        return key + areas;
+        return key+" "+areas;
     }
 
 
