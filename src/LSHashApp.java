@@ -20,6 +20,8 @@ public class LSHashApp{
         else{
             System.out.println("Invalid argument given.");
         }
+    System.out.println(LSHash.insCount);
+    System.out.print(LSHash.findCount);
     
-    }
+}
 }
